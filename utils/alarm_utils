@@ -35,13 +35,8 @@ EOF
     main_menu
 fi
 
-if [[ INSTALL == true ]] ; then
 	dialog --title "OK" --msgbox "Successfully added repo $REPO." 10 60
 	main_menu
-else
-	dialog --title "OK" --msgbox "Repo $REPO was not added.\nMaybe it is already added." 10 60
-	main_menu
-fi
 }
 
 part_grow() {
@@ -79,10 +74,6 @@ fi
 }
 
 install_desktop() {
-if [[ $NAME == "Manjaro-ARM" ]]; then
-	dialog --title "WARNING" --msgbox "Seems You are running Manjaro.\nManjaro images has desktop preinstalled.\nSo you dont need this." 10 60
-
-fi
 
 DE=$(dialog --backtitle "${BACKTITLE}" --title "Install Desktop" --menu  "Which desktop do you like?" 15 100 4 \
 "KDE Plasma" "Highly customizable, Releatively Low system resource consumption" \
@@ -115,7 +106,6 @@ CHOOSE_E=$(dialog --backtitle "${BACKTITLE}" --title "Extra Menu" --menu "Choose
 "Switch to Chinese Mirror" "" \
 "Install Chinese IM" "" \
 "Install Bluetooth Support" "" \
-"Switch to Chinese Mirror" "" \
 "Back" "" 3>&1 1>&2 2>&3 )
 
 if [[ "${CHOOSE_E}" == "Switch to Chinese Mirror" ]]; then
@@ -132,7 +122,7 @@ EOF
 
 elif [[ "${CHOOSE_E}" == "Install Chinese IM" ]]; then
 
-	pacman -Sy fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-material-color fcitx5-rime
+	pacman -Sy fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-material-color
 	cat >> ~/.pam_environment <<'EOF'
 INPUT_METHOD DEFAULT=fcitx5
 GTK_IM_MODULE DEFAULT=fcitx5
@@ -140,7 +130,8 @@ QT_IM_MODULE DEFAULT=fcitx5
 XMODIFIERS DEFAULT=\@im=fcitx5
 SDL_IM_MODULE DEFAULT=fcitx
 EOF
-	dialog --title "OK" --msgbox "Installed Chinese IM,but it needs further configration.\nSee https://arch.icekylin.online/rookie/desktop-env-and-app.html#_10-安装输入法" 10 60
+	dialog --title "OK" --msgbox "Installed Chinese IM,but it needs further configration.\nSee https://arch.icekylin.online/rookie/desktop-env-and-app.html" 10 60
+	main_menu
 
 elif [[ "${CHOOSE_E}" == "Install Bluetooth Support" ]]; then
 

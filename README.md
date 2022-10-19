@@ -9,7 +9,7 @@ Utils 包含一些实用功能. 在基本系统配置完成后运行来下载脚
 
 Utils contains some utility function. After the base system is configured, run this to download script:
 
-`sudo pacman -S dialog && sudo wget https://github.com/Scirese/alarm/raw/main/utils/alarm_utils -O /usr/bin/alarm_utils`
+`sudo pacman -S dialog && sudo wget https://github.com/Scirese/alarm/raw/main/utils/alarm_utils -O /usr/bin/alarm_utils && sudo chmod +x /usr/bin/alarm_utils`
 
 然后使用 `sudo alarm_utils` 运行。
 
