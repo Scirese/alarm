@@ -12,6 +12,7 @@ Ubuntu 最新的版本在 ARM 平台上的桌面体验可谓一言难尽, 从 22
 
 我们能选的就是 Arch 系最好的两个发行版，Arch Linux 本尊和 Manjaro. 它们对 ARM 的支持情况不相上下，都十分不错.
 在这里我选择 Arch Linux. 当然, 我也会顺带说一下 Manjaro 的安装.
+如果你不是很熟练的用户, 我建议你选择 Manjaro.
 
 HK1 Box 是基于 Amlogic 平台, Armbian社区已经不再支持 Amlogic 平台了. 所以首先我们要去 [ophub/amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian/) 下载我们机型的镜像作为底包.
 直接前往这个项目的 Release 界面, 找到像这样 `Armbian_Aml_jammy_xx.xx.xxxx` 的 Release 项，下载你机型对应的包. 比如我的 HK1Box 需要选择 `Armbian_22.11.0_Aml_s905x3_jammy_5.15.72_server_xxxx.xx.xx.img.gz`.
@@ -94,7 +95,7 @@ pacman -S sudo uboot-tools wget git
 
 如果你想把系统安装到 emmc 的话, 我推荐你现在就安装:
 ```bash
-armbian-install
+pacman -S dosfstools parted && armbian-install
 ```
 
 这样, 一个 Arch Linux ARM 基本系统就准备完毕了. 你可以安装一个桌面环境, 或者说其他你需要的软件. 开始享受吧！
@@ -116,6 +117,7 @@ sudo mkimage -A arm64 -O linux -T ramdisk -C gzip -n uInitrd -d (生成的镜像
 ---
 
 - AUR
+- 
 我们亲爱的 AUR 管理器在 arm 平台也是完全可用的
 paru (Rust): ~~这玩意我在盒子上足足编译了32分钟~~
 ```bash
@@ -142,6 +144,13 @@ AUR 对 arm 的支持基本可以分为3种
 ---
 
 - 浏览器
+  
 Edge, Chrome 等都只为 amd64 打包. 你可以选择 Firefox, Chromium 等.
 
+谷歌早就已经不再允许 Chromium 同步 Chrome 的浏览数据, 所以同步可能是个问题.
 
+Firefox 能全平台同步，所以 ~~Firefox 就是 YYDS~~.
+
+
+### 鸽子挖坑
+~~你可能不知道, 但 Grub 引导器是支持 aarch64 的, 配合 btrfs 子卷和 U-Boot 的 EFI 模式, 安装多系统也不是不可能? ~~

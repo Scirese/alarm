@@ -13,6 +13,7 @@ In addition to Debian-based distributions, Arch-based distributions also support
 
 We can pick two of the best distros in the Arch system, Arch Linux itself and Manjaro. Their support for ARM is comparable and both are very good.
 Here I choose Arch Linux. Of course, I will also mention the installation of Manjaro by the way.
+If you are not a skilled user, I would recommend you to choose Manjaro.
 
 The HK1 Box is based on the Amlogic platform, Armbian community no longer supports the Amlogic platform anymore. So first we go to [ophub/amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian/) to download The mirror image of our model is used as the base package.
 Go directly to the Release of this project, find the Release item like `Armbian_Aml_jammy_xx.xx.xxxx`, and download the package corresponding to your model. For example, I need to select `Armbian_22.11.0_Aml_s905x3_jammy_5.15.72_server_xxxx.xx.xx.img.gz` for my HK1Box.
@@ -128,6 +129,7 @@ Then modify the boot settings and point the KERNEL to the new kernel.
 
 - AUR
 Our dear AUR manager is also fully available on arm platform
+
 paru (Rust): ~~I compiled this thing on my box for 32 MINUTES~~
 ```bash
 git clone https://aur.archlinux.org/paru.git
@@ -148,9 +150,18 @@ AUR's support for arm can be basically divided into 3 types
 - Generic or on-site download source code compiled, generally can be used without modding PKGBUILD
 - Repackage binary, with arm binary provided, generally can be used with a little mod on PKGBUILD
 - Repackage binary, and no arm binary provided, no way
+- 
 When packaging manually, you can use `makepkg -A`. This will ignore architecture requirements, and you will be able to package successfully.
 
 ---
 
 - Browser
 Browsers like Edge and Chrome are only packaged for amd64. You can choose Firefox and Chromium, etc.
+
+Google has long since stopped allowing Chromium to sync Chrome's browsing data, so syncing may be a problem.
+
+Firefox can sync across all platforms, so ~~FIREFOX IS THE GOD~~.
+
+
+### Working
+~~You may not know this, but the Grub bootloader supports aarch64, and with btrfs subvolumes and U-Boot's EFI mode, it's maybe possible to multi boot? ~~.
