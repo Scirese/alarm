@@ -100,6 +100,8 @@ pacman -S dosfstools parted && armbian-install
 
 这样, 一个 Arch Linux ARM 基本系统就准备完毕了. 你可以安装一个桌面环境, 或者说其他你需要的软件. 开始享受吧！
 
+推荐使用 Wayland 显示协议, Panfrost GPU 驱动对它有特殊优化.
+
 ### 一些有用的东西
 
 - 更新内核
@@ -151,6 +153,25 @@ Edge, Chrome 等都只为 amd64 打包. 你可以选择 Firefox, Chromium 等.
 
 Firefox 能全平台同步，所以 ~~Firefox 就是 YYDS~~.
 
+- gAMeING
+
+Mali GPU 在 Linux 主线里的驱动叫 Panfrost. 它支持 3D(OpenGL) ,但是, 性能可能不是很好.
+
+使用 PPSSPPQt 运行《最终幻想: 零式》, 帧数大概在 10 帧左右(Qt 的比 SDL 的性能要好一点). 实际感觉其实没有那么卡, 勉强能玩吧.
+
+要知道《最终幻想: 零式》是 PSP 上压力比较大的 3D 游戏, 跑这个样子也算在我预料之内. 总而言之, PSP 时代压力较大的 3D 游戏应该就是这台 HK1 Box 在主线内核下的极限了.
+
+至于 PSP 的 2D 游戏或者轻量的 3D 游戏, NDS 游戏或者更早的游戏(PS2 这种不算)基本就能轻松应对了.
+
+(PPSSPP 直接从 AUR 打包就行, **不推荐在盒子上编译, 不然你会深刻体会“慢”是什么意思的.**)
+
+以后我会试试原生 Linux 游戏.
+
+- 视频解码
+
+主线内核下, 视频硬解码能力可以说几乎就是没有. 只有 mpv 能在*某种程度上*调用硬解(指 CPU 占用比较低).
+
+看视频还是去安卓或 Coreelec 吧.
 
 ### 鸽子挖坑
-~~你可能不知道, 但 Grub 引导器是支持 aarch64 的, 配合 btrfs 子卷和 U-Boot 的 EFI 模式, 安装多系统也不是不可能? ~~
+~~你可能不知道, 但 Grub 引导器是支持 aarch64 的, 配合 btrfs 子卷和 U-Boot 的 EFI 模式, 安装多系统也不是不可能?~~

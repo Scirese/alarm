@@ -106,7 +106,7 @@ pacman -S sudo uboot-tools wget git
 
 If you want to install the system to emmc, I recommend you install it now:
 ```bash
-armbian-install
+pacman -S dosfstools parted && armbian-install
 ```
 
 With that, an Arch Linux ARM base system is ready. You can install a desktop environment, or whatever else you need. Enjoy!
@@ -156,12 +156,33 @@ When packaging manually, you can use `makepkg -A`. This will ignore architecture
 ---
 
 - Browser
+  
 Browsers like Edge and Chrome are only packaged for amd64. You can choose Firefox and Chromium, etc.
 
 Google has long since stopped allowing Chromium to sync Chrome's browsing data, so syncing may be a problem.
 
 Firefox can sync across all platforms, so ~~FIREFOX IS THE GOD~~.
 
+- gAMeING
+
+Mali GPU driver in mainline Linux is called Panfrost. It supports 3D (OpenGL), however, the performance may not be very good.
+
+Running *Final Fantasy: Type-0* with PPSSPPQt, we got around 10 fps (Qt performance is a bit better than SDL's). It doesn't really feel that laggy, barely playable.
+
+Knowing that *Final Fantasy: Type-0* is one of the more stressful 3D games on the PSP, I would expect it to run this way. All in all, the more stressful 3D games of the PSP era should be the uplimit of this HK1 Box under mainline kernel.
+
+As for PSP 2D games or lighter 3D games, NDS games or earlier games ~~(PS2 doesn't count)~~ can basically handle it easily.
+
+(PPSSPP can be packaged directly from AUR, **not recommended to compile on the box, otherwise you will deeply appreciate what "SLOW" means.**)
+
+Later I will try some native Linux games.
+
+- Video decoding
+
+With mainline kernel, video hard decoding capability is almost non-existent. Only mpv can *somehow* call hard decoding (meaning lower CPU usage).
+
+You should go to the Android or Coreelec to watch your videos.
+
 
 ### Working
-~~You may not know this, but the Grub bootloader supports aarch64, and with btrfs subvolumes and U-Boot's EFI mode, it's maybe possible to multi boot? ~~.
+~~You may not know this, but the Grub bootloader supports aarch64, and with btrfs subvolumes and U-Boot's EFI mode, it's maybe possible to multi boot?~~.
