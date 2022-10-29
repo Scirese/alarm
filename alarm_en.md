@@ -175,7 +175,7 @@ Knowing that *Final Fantasy: Type-0* is one of the most stressful 3D games on th
 
 As for PSP 2D games or lighter 3D games, NDS games or earlier games ~~(PS2 doesn't count)~~ can basically be handled easily.
 
-(PPSSPP can be packaged directly from AUR, **It's nnot recommended to compile on the box, otherwise you will deeply appreciate what "SLOW" means.**)
+(PPSSPP can be packaged directly from AUR, **It's not recommended to compile on the box, otherwise you will deeply appreciate what "SLOW" means.**)
 
 Later I will try some native Linux games.
 
