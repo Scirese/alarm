@@ -100,7 +100,6 @@ pacman -S dosfstools parted && armbian-install
 
 这样, 一个 Arch Linux ARM 基本系统就准备完毕了. 你可以安装一个桌面环境, 或者说其他你需要的软件. 开始享受吧！
 
-推荐使用 Wayland 显示协议, Panfrost GPU 驱动对它有特殊优化.
 
 ### 一些有用的东西
 
@@ -158,6 +157,9 @@ Firefox 能全平台同步，所以 ~~Firefox 就是 YYDS~~.
 Mali GPU 在 Linux 主线里的驱动叫 Panfrost. 它支持 3D(OpenGL) ,但是, 性能可能不是很好.
 
 使用 PPSSPPQt 运行《最终幻想: 零式》, 帧数大概在 10 帧左右(Qt 的比 SDL 的性能要好一点). 实际感觉其实没有那么卡, 勉强能玩吧.
+
+![《最终幻想: 零式》](imgs/ff0.png)
+
 
 要知道《最终幻想: 零式》是 PSP 上压力比较大的 3D 游戏, 跑这个样子也算在我预料之内. 总而言之, PSP 时代压力较大的 3D 游戏应该就是这台 HK1 Box 在主线内核下的极限了.
 

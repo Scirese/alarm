@@ -167,7 +167,9 @@ Firefox can sync across all platforms, so ~~FIREFOX IS THE GOD~~.
 
 Mali GPU driver in mainline Linux is called Panfrost. It supports 3D (OpenGL), however, the performance may not be very good.
 
-Running *Final Fantasy: Type-0* with PPSSPPQt, we got around 10 fps (Qt performance is a bit better than SDL's). It doesn't really feel that laggy, barely playable.
+Running *Final Fantasy: Type-0* with PPSSPPQt, we got around 10 fps (Qt's performance is a bit better than SDL's). It doesn't really feel that laggy, barely playable.
+
+![Final Fantasy: Type-0](imgs/ff0.png)
 
 Knowing that *Final Fantasy: Type-0* is one of the more stressful 3D games on the PSP, I would expect it to run this way. All in all, the more stressful 3D games of the PSP era should be the uplimit of this HK1 Box under mainline kernel.
 
